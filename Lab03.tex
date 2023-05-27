@@ -1,0 +1,321 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Lab 03},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Lab 03}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\hypertarget{packages}{%
+\section{Packages}\label{packages}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(sf)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data}{%
+\section{Data}\label{data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl\_votes }\OtherTok{\textless{}{-}} \FunctionTok{st\_read}\NormalTok{(}\StringTok{"data/fl\_votes.shp"}\NormalTok{, }\AttributeTok{quiet =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{fl\_votes }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{slice}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Simple feature collection with 6 features and 5 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -85.99989 ymin: 25.95675 xmax: -80.01528 ymax: 30.58427
+## Geodetic CRS:  NAD83
+##     county  rep16  dem16  rep20  dem20                       geometry
+## 1  Alachua  46834  75820  50972  89704 MULTIPOLYGON (((-82.37389 2...
+## 2    Baker  10294   2112  11911   2037 MULTIPOLYGON (((-82.10107 3...
+## 3      Bay  62194  21797  66097  25614 MULTIPOLYGON (((-85.65968 3...
+## 4 Bradford   8913   2924  10334   3160 MULTIPOLYGON (((-82.274 29....
+## 5  Brevard 181848 119679 207883 148549 MULTIPOLYGON (((-80.49977 2...
+## 6  Broward 260951 553320 333409 618752 MULTIPOLYGON (((-80.29693 2...
+\end{verbatim}
+
+\hypertarget{exercise-1}{%
+\section{Exercise 1}\label{exercise-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl\_votes }\OtherTok{\textless{}{-}}\NormalTok{ fl\_votes }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{winner20 =} \FunctionTok{if\_else}\NormalTok{(dem20 }\SpecialCharTok{\textgreater{}}\NormalTok{ rep20, }\StringTok{"Democratic"}\NormalTok{, }
+                            \FunctionTok{if\_else}\NormalTok{(dem20 }\SpecialCharTok{\textless{}}\NormalTok{ rep20, }\StringTok{"Republican"}\NormalTok{, }\StringTok{"Tie"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exercise-2}{%
+\section{Exercise 2}\label{exercise-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(sf)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Assuming you have already loaded the fl\_votes data into a data frame called \textquotesingle{}fl\_votes\textquotesingle{}}
+
+\CommentTok{\# Create a color palette for the winners}
+\NormalTok{color\_palette }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"\#DE0100"}\NormalTok{, }\StringTok{"\#0015BC"}\NormalTok{, }\StringTok{"\#AAAAAA"}\NormalTok{) }\CommentTok{\# Red for Republican, Blue for Democratic, Gray for Tie}
+
+\CommentTok{\# Plot the election results by county}
+\FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{data =}\NormalTok{ fl\_votes, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ winner20)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =}\NormalTok{ color\_palette) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Florida\textquotesingle{}s 2020 Presidential Election Results by County"}\NormalTok{,}
+       \AttributeTok{fill =} \StringTok{"Winner"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Lab03_files/figure-latex/fl-plot-1-1.pdf}
+
+\hypertarget{exercise-3}{%
+\section{Exercise \#3}\label{exercise-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+
+\CommentTok{\# Assuming you have already loaded the fl\_votes data into a data frame called \textquotesingle{}fl\_votes\textquotesingle{}}
+
+\NormalTok{fl\_props }\OtherTok{\textless{}{-}}\NormalTok{ fl\_votes }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{prop\_rep16 =}\NormalTok{ rep16 }\SpecialCharTok{/}\NormalTok{ (rep16 }\SpecialCharTok{+}\NormalTok{ dem16),}
+         \AttributeTok{prop\_rep20 =}\NormalTok{ rep20 }\SpecialCharTok{/}\NormalTok{ (rep20 }\SpecialCharTok{+}\NormalTok{ dem20))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exercise-4}{%
+\section{Exercise 4}\label{exercise-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(sf)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Assuming you have already loaded the fl\_props data into a data frame called \textquotesingle{}fl\_props\textquotesingle{}}
+
+\CommentTok{\# Plot the election results by county}
+\FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{data =}\NormalTok{ fl\_props, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ prop\_rep20)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{"\#0015BC"}\NormalTok{, }\AttributeTok{high =} \StringTok{"\#DE0100"}\NormalTok{, }\AttributeTok{name =} \StringTok{"Republican}\SpecialCharTok{\textbackslash{}n}\StringTok{Proportion"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Florida\textquotesingle{}s 2020 Presidential Election Results by County"}\NormalTok{,}
+       \AttributeTok{fill =} \StringTok{"Republican Proportion"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Lab03_files/figure-latex/fl-plot-2-1.pdf}
+
+\hypertarget{exercise-5}{%
+\section{Exercise 5}\label{exercise-5}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+
+\CommentTok{\# Assuming you have already loaded the fl\_props data into a data frame called \textquotesingle{}fl\_props\textquotesingle{}}
+
+\NormalTok{fl\_change }\OtherTok{\textless{}{-}}\NormalTok{ fl\_props }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{diff\_rep =}\NormalTok{ prop\_rep20 }\SpecialCharTok{{-}}\NormalTok{ prop\_rep16)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exercise-6}{%
+\section{Exercise 6}\label{exercise-6}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(sf)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Assuming you have already loaded the fl\_change data into a data frame called \textquotesingle{}fl\_change\textquotesingle{}}
+
+\CommentTok{\# Plot the change in Republican vote share by county}
+\FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{data =}\NormalTok{ fl\_change, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ diff\_rep)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_gradient2}\NormalTok{(}\AttributeTok{low =} \StringTok{"\#0015BC"}\NormalTok{, }\AttributeTok{mid =} \StringTok{"white"}\NormalTok{, }\AttributeTok{high =} \StringTok{"\#DE0100"}\NormalTok{, }\AttributeTok{midpoint =} \DecValTok{0}\NormalTok{,}
+                      \AttributeTok{name =} \StringTok{"Change in}\SpecialCharTok{\textbackslash{}n}\StringTok{Republican Vote Share"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Change in Republican Vote Share in Florida}\SpecialCharTok{\textbackslash{}n}\StringTok{Between 2016 and 2020"}\NormalTok{,}
+       \AttributeTok{fill =} \StringTok{"Change in Republican Vote Share"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Lab03_files/figure-latex/fl-plot-3-1.pdf}
+
+\hypertarget{exercise-7}{%
+\section{Exercise 7}\label{exercise-7}}
+
+The visualizations developed provide insights into the 2016 and 2020
+Presidential elections in Florida. Here's what we can interpret from the
+visualizations:
+
+Visualization 1: Plot of Florida's 2020 Presidential Election Results by
+County, Colored by Winner (fl-plot-1)
+
+This visualization shows the distribution of winners (Democratic,
+Republican, or Tie) in each county for the 2020 Presidential election.
+It allows us to identify the counties that were won by Democrats,
+Republicans, or resulted in a tie. We can observe the spatial patterns
+and the dominance of certain political parties in different regions of
+Florida. Visualization 2: Plot of the 2020 U.S. Presidential Election
+Results by County, Colored by Republican Proportion (fl-plot-2)
+
+This visualization represents the proportion of the two-party vote that
+went to the Republican candidate in the 2020 Presidential election. It
+highlights the variations in Republican support across different
+counties in Florida. We can identify areas where the Republican
+candidate had a higher proportion of the vote, as well as areas where
+the Democratic candidate had a stronger showing. Visualization 3: Plot
+of Change in Republican Vote Share in Florida Between 2016 and 2020
+(fl-plot-3)
+
+This visualization depicts the change in the Republican vote share
+between the 2016 and 2020 Presidential elections. It allows us to
+visualize the shift in support towards or away from the Republican
+candidate in different counties. Positive values indicate an increase in
+Republican vote share, while negative values indicate a decrease. We can
+identify counties where there was a significant change in political
+preferences over the four-year period. Limitations of these
+visualizations include:
+
+County-level granularity: The visualizations provide insights at the
+county level, but they do not capture the diversity of political
+opinions within each county. Political preferences can vary within a
+county, and these visualizations might oversimplify the complex nature
+of voting patterns.
+
+Aggregated data: The visualizations present aggregated data for each
+county, which means individual voter preferences and demographics are
+not accounted for. Important factors such as population density,
+urban-rural divide, and demographic shifts within counties are not
+explicitly represented.
+
+Spatial bias: The visualizations focus on the geographic distribution of
+results and changes, but they do not consider other factors that might
+influence voting patterns, such as socioeconomic factors, campaign
+strategies, or voter turnout.
+
+Missing contextual information: The visualizations do not provide
+additional contextual information about specific events, political
+campaigns, or external factors that may have influenced the election
+outcomes in Florida.
+
+To gain a more comprehensive understanding of the elections, it is
+essential to complement these visualizations with further analysis,
+considering additional factors and incorporating individual-level data.
+
+\end{document}

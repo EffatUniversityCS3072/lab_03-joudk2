@@ -1,11 +1,12 @@
 ---
 title: "Lab 03"
-author: ""
-date: ""
-editor_options: 
-  chunk_output_type: console
+author: ''
+date: ''
 output:
+  word_document: default
   pdf_document: default
+editor_options:
+  chunk_output_type: console
 ---
 
 # Packages
@@ -13,6 +14,7 @@ output:
 ```{r load-packages, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(sf)
+library(dplyr)
 ``` 
 
 # Data
@@ -27,42 +29,120 @@ fl_votes %>%
 # Exercise 1
 
 ```{r add-winner}
-
+fl_votes <- fl_votes %>%
+  mutate(winner20 = if_else(dem20 > rep20, "Democratic", 
+                            if_else(dem20 < rep20, "Republican", "Tie")))
 ```
 
 
 # Exercise 2
 
 ```{r fl-plot-1}
+library(sf)
+library(ggplot2)
 
+# Assuming you have already loaded the fl_votes data into a data frame called 'fl_votes'
+
+# Create a color palette for the winners
+color_palette <- c("#DE0100", "#0015BC", "#AAAAAA") # Red for Republican, Blue for Democratic, Gray for Tie
+
+# Plot the election results by county
+ggplot() +
+  geom_sf(data = fl_votes, aes(fill = winner20)) +
+  scale_fill_manual(values = color_palette) +
+  labs(title = "Florida's 2020 Presidential Election Results by County",
+       fill = "Winner") +
+  theme_minimal()
 
 ```
 
 # Exercise #3
 
 ```{r fl-props}
+library(dplyr)
 
+# Assuming you have already loaded the fl_votes data into a data frame called 'fl_votes'
+
+fl_props <- fl_votes %>%
+  mutate(prop_rep16 = rep16 / (rep16 + dem16),
+         prop_rep20 = rep20 / (rep20 + dem20))
 ```
 
 # Exercise 4
 
 ```{r fl-plot-2}
+library(sf)
+library(ggplot2)
 
+# Assuming you have already loaded the fl_props data into a data frame called 'fl_props'
+
+# Plot the election results by county
+ggplot() +
+  geom_sf(data = fl_props, aes(fill = prop_rep20)) +
+  scale_fill_gradient(low = "#0015BC", high = "#DE0100", name = "Republican\nProportion") +
+  labs(title = "Florida's 2020 Presidential Election Results by County",
+       fill = "Republican Proportion") +
+  theme_minimal()
 ```
 
 # Exercise 5
 
 ```{r fl-change}
+library(dplyr)
 
+# Assuming you have already loaded the fl_props data into a data frame called 'fl_props'
+
+fl_change <- fl_props %>%
+  mutate(diff_rep = prop_rep20 - prop_rep16)
 ```
 
 # Exercise 6
 
 ```{r fl-plot-3}
+library(sf)
+library(ggplot2)
 
+# Assuming you have already loaded the fl_change data into a data frame called 'fl_change'
+
+# Plot the change in Republican vote share by county
+ggplot() +
+  geom_sf(data = fl_change, aes(fill = diff_rep)) +
+  scale_fill_gradient2(low = "#0015BC", mid = "white", high = "#DE0100", midpoint = 0,
+                      name = "Change in\nRepublican Vote Share") +
+  labs(title = "Change in Republican Vote Share in Florida\nBetween 2016 and 2020",
+       fill = "Change in Republican Vote Share") +
+  theme_minimal()
 ```
 
 # Exercise 7
+The visualizations developed provide insights into the 2016 and 2020 Presidential elections in Florida. Here's what we can interpret from the visualizations:
 
+Visualization 1: Plot of Florida's 2020 Presidential Election Results by County, Colored by Winner (fl-plot-1)
+
+This visualization shows the distribution of winners (Democratic, Republican, or Tie) in each county for the 2020 Presidential election.
+It allows us to identify the counties that were won by Democrats, Republicans, or resulted in a tie.
+We can observe the spatial patterns and the dominance of certain political parties in different regions of Florida.
+Visualization 2: Plot of the 2020 U.S. Presidential Election Results by County, Colored by Republican Proportion (fl-plot-2)
+
+This visualization represents the proportion of the two-party vote that went to the Republican candidate in the 2020 Presidential election.
+It highlights the variations in Republican support across different counties in Florida.
+We can identify areas where the Republican candidate had a higher proportion of the vote, as well as areas where the Democratic candidate had a stronger showing.
+Visualization 3: Plot of Change in Republican Vote Share in Florida Between 2016 and 2020 (fl-plot-3)
+
+This visualization depicts the change in the Republican vote share between the 2016 and 2020 Presidential elections.
+It allows us to visualize the shift in support towards or away from the Republican candidate in different counties.
+Positive values indicate an increase in Republican vote share, while negative values indicate a decrease.
+We can identify counties where there was a significant change in political preferences over the four-year period.
+Limitations of these visualizations include:
+
+County-level granularity: The visualizations provide insights at the county level, but they do not capture the diversity of political opinions within each county. Political preferences can vary within a county, and these visualizations might oversimplify the complex nature of voting patterns.
+
+Aggregated data: The visualizations present aggregated data for each county, which means individual voter preferences and demographics are not accounted for. Important factors such as population density, urban-rural divide, and demographic shifts within counties are not explicitly represented.
+
+Spatial bias: The visualizations focus on the geographic distribution of results and changes, but they do not consider other factors that might influence voting patterns, such as socioeconomic factors, campaign strategies, or voter turnout.
+
+Missing contextual information: The visualizations do not provide additional contextual information about specific events, political campaigns, or external factors that may have influenced the election outcomes in Florida.
+
+To gain a more comprehensive understanding of the elections, it is essential to complement these visualizations with further analysis, considering additional factors and incorporating individual-level data.
 
 
